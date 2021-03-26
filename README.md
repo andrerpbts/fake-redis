@@ -16,6 +16,7 @@ And run the specs:
 ### Using
 
 You can start the server calling the cli present in bin folder
+
     $ bin/cli
 
 ### Examples
