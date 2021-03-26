@@ -8,10 +8,7 @@ module FakeRedis
     end
 
     def list
-      @data.inject({}) do |result, transaction_data|
-        result.merge!(transaction_data)
-        result
-      end.freeze
+      @data.reduce(&:merge).freeze
     end
 
     def get(key)
