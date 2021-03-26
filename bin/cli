@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+$: << File.join(File.dirname(__FILE__), "/")
+require_relative '../lib/fake_redis'
+
+server = FakeRedis::Server.new
+
+while server.running?
+  print server.prompt
+
+  entry = gets.chomp
+  puts server.resolve(entry)
+end
